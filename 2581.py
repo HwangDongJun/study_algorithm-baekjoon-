@@ -1,5 +1,6 @@
-#소수 구하기
-m, n = [int(x) for x in input().split()]
+#소수
+m = int(input())
+n = int(input())
 nums = list()
 
 for i in range(m, n+1):
@@ -7,12 +8,15 @@ for i in range(m, n+1):
         nums.append(i)
     elif i != 1 and i % 2 != 0:
         ok = True
-        for j in range(3, i, 2):
+        for j in range(2, i):
             if i % j == 0:
                 ok = False
                 break
         if ok:
             nums.append(i)
 
-for a in range(len(nums)):
-    print(nums[a])
+if len(nums) == 0:
+    print(-1)
+else:
+    print(sum(nums))
+    print(min(nums))
